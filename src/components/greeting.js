@@ -5,14 +5,16 @@ import { fetchGreeting } from '../redux/greetings/reducers/greetingsReducer';
 
 const Greeting = () => {
   const dispatch = useDispatch();
-  const greeting = useSelector(({ greetingReducer }) => greetingReducer.messages);
+  const greeting = useSelector(({ greetingReducer }) => greetingReducer.message);
 
   useEffect(() => {
     dispatch(fetchGreeting());
   }, []);
 
   return (
-    <h1>{greeting.length > 0 && greeting[0].result.message}</h1>
+    <div>
+      <h1>{greeting && greeting.message}</h1>
+    </div>
   );
 };
 

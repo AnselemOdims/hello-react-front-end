@@ -26,7 +26,7 @@ cd hello-react-front-end
 and then run the following command
 
 ```
-npm start
+PORT=3001 npm start
 ```
 
 ## Author
